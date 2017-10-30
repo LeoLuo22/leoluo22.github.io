@@ -241,8 +241,8 @@
     
 
     
-        <meta property="article:published_time" content="Mon Oct 30 2017 19:42:11 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 19:42:11 GMT+0800" />
+        <meta property="article:published_time" content="Mon Oct 30 2017 19:45:11 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Oct 30 2017 19:45:11 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -268,8 +268,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html",
     "headline": "如何在SolrCloud中添加删除节点",
-    "datePublished": "Mon Oct 30 2017 19:42:11 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 19:42:11 GMT+0800",
+    "datePublished": "Mon Oct 30 2017 19:45:11 GMT+0800",
+    "dateModified": "Mon Oct 30 2017 19:45:11 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Leo Luo",
@@ -526,7 +526,7 @@
     
         <h1 id="如何在SolrCloud中添加删除节点"><a href="#如何在SolrCloud中添加删除节点" class="headerlink" title="如何在SolrCloud中添加删除节点"></a>如何在SolrCloud中添加删除节点</h1><hr>
 <blockquote>
-<p>本人原创，转载请注明出处<br>Blog:<a href="http://leoluo.top" title="LeoLuo" target="_blank" rel="external">Why So Serious</a><br>Github: <a href="https://github.com/LeoLuo22/" target="_blank" rel="external">LeoLuo22</a><br>CSDN: <a href="http://blog.csdn.net/u013271714" target="_blank" rel="external">我的CSDN</a></p>
+<p>本人原创，转载请注明出处<br>Blog:<a href="http://leoluo.top" title="LeoLuo" target="_blank" rel="external">Why So Serious</a><br>Github: <a href="https://github.com/LeoLuo22/" target="_blank" rel="external">LeoLuo22</a><br>CSDN: <a href="http://blog.csdn.net/u013271714" target="_blank" rel="external">我的CSDN</a>   </p>
 </blockquote>
 <hr>
 <h2 id="0x00-准备"><a href="#0x00-准备" class="headerlink" title="0x00 准备"></a>0x00 准备</h2><p><em>注: 默认你已经搭建好了zookeeper集群。并且已经把配置文件夹上传到了zookeeper。</em>   </p>
@@ -534,7 +534,7 @@
 <pre><code>mkdir &lt;solr.home for new solr node&gt;
 cp &lt;existing solr.xml path&gt; &lt;new solr.home&gt;
 </code></pre><p>solr.xml文件内容大概是这样：   </p>
-<p><img src="http://1" alt="图1">   </p>
+<p><img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE1.png" alt="图1">   </p>
 <h2 id="0x01-方案1"><a href="#0x01-方案1" class="headerlink" title="0x01 方案1"></a>0x01 方案1</h2><p>之前采用的方案是当节点增加时创建新的分区，删除节点删除对应的分区就可以了。   </p>
 <ul>
 <li>创建集合   </li>
@@ -542,15 +542,13 @@ cp &lt;existing solr.xml path&gt; &lt;new solr.home&gt;
 <p><code>http://22.11.97.12:8983/solr/admin/collections?action=CREATE&amp;name=product-collection&amp;router.name=implicit&amp;shards=shard1,shard2&amp;collection.configName=myconf</code>   </p>
 <p>其中，注意route.name要设为impicit的，这样的话以后才能动态添加删除分区。shards根据你的当前的Solr服务器数目决定，目前我有两台服务器，所以设为shard1和shard2。 还有要指定配置文件夹名称，配置文件夹我是放在Zookeeper的/configs/myconf。   </p>
 <p>此时的集群如下：   </p>
-<p><img src="http://11" alt="图2"></p>
+<p><img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE2.png" alt="图2"></p>
 <ul>
 <li>创建分区   </li>
 </ul>
 <p>启动你要新增的节点。运行创建分区的命令。   </p>
 <pre><code>http://22.11.97.18:8987/solr/admin/collections?action=CREATESHARD&amp;shard=shard3&amp;collection=function-collection   
-</code></pre><p>此时的集群如下：</p>
-<p><img src="http://11" alt="图3">   </p>
-<ul>
+</code></pre><ul>
 <li><p>删除分区   </p>
 <p>  <a href="http://22.11.97.18:8987/solr/admin/collections?action=DELETESHARD&amp;shard=shard3&amp;collection=function-collection" target="_blank" rel="external">http://22.11.97.18:8987/solr/admin/collections?action=DELETESHARD&amp;shard=shard3&amp;collection=function-collection</a>   </p>
 </li>
@@ -565,7 +563,7 @@ cp &lt;existing solr.xml path&gt; &lt;new solr.home&gt;
 <p>  <a href="http://22.11.97.11:8983/solr/admin/collections?action=CREATE&amp;name=function-collection&amp;replicationFactor=3&amp;collection.configName=myconf&amp;numShards=1" target="_blank" rel="external">http://22.11.97.11:8983/solr/admin/collections?action=CREATE&amp;name=function-collection&amp;replicationFactor=3&amp;collection.configName=myconf&amp;numShards=1</a>   </p>
 </li>
 </ul>
-<p><img src="http://11" alt="图4"></p>
+<p><img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE4.png" alt="图4"></p>
 <p>replicationFactor是副本的个数，以你当前的服务器数为准。numShards是分区数，目前设置为1个分区。   </p>
 <ul>
 <li><p>添加节点   </p>
@@ -576,7 +574,7 @@ cp &lt;existing solr.xml path&gt; &lt;new solr.home&gt;
 </ul>
 <p>默认，从上往下是core_node1,code_node2,core_node3   </p>
 <pre><code>http://22.11.97.11:8983/solr/admin/collections?action=DELETEREPLICA&amp;collection=function-collection&amp;shard=shard1&amp;replica=core_node1   
-</code></pre><p><img src="http://1" alt="图5"></p>
+</code></pre><p><img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE5.png" alt="图5"></p>
 <h2 id="0x03-小结"><a href="#0x03-小结" class="headerlink" title="0x03 小结"></a>0x03 小结</h2><p>目前我所知道的动态添加删除节点的方式就两种。一种是通过将集合切割分区的方式，但是这种方式有两个弊端。其一是目前的集合的文档数还不多，不到2w，切割太多的分区没有意义，一个就好。其二是不知道为什么这种方式导致新增的节点都是主节点，所以一台节点挂掉之后整个集群就挂了。   </p>
 <p>而第二种方式，也就是是添加分区的副本(replica)的方式，这种方式的话Solr会自动选举主节点，避免了单个节点挂掉整个集群就奔溃。而且日后如果索引太多的话，可以通过切割分区的方式来划分。   </p>
 <p>后续如果索引太多可以使用   </p>
