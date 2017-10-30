@@ -41,7 +41,7 @@
     
     <title>
         
-            归档 | 
+            使用Python发送和读取Lotus Notes邮件 | 
         
         Why So Serious?
     </title>
@@ -235,15 +235,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http:/leoluo.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | Why So Serious?">
+    <meta property="og:title" content="使用Python发送和读取Lotus Notes邮件 | Why So Serious?">
     <meta property="og:image" content="http:/leoluo.top/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Mon Oct 30 2017 19:41:42 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Oct 30 2017 19:41:20 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | Why So Serious?">
+    <meta name="twitter:title" content="使用Python发送和读取Lotus Notes邮件 | Why So Serious?">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http:/leoluo.top/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -251,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http:/leoluo.top/archives/index.html" />
+        <link rel="canonical" href="http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html",
+    "headline": "使用Python发送和读取Lotus Notes邮件",
+    "datePublished": "Mon Oct 30 2017 19:41:42 GMT+0800",
+    "dateModified": "Mon Oct 30 2017 19:41:20 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Leo Luo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Why So Serious?",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -300,206 +333,370 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用Python发送和读取Lotus-Notes邮件"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用Python发送和读取Lotus Notes邮件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">0x00前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01准备"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">0x01准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-读取邮件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">0x02 读取邮件</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/如何在SolrCloud中添加删除节点/">如何在SolrCloud中添加删除节点</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/">使用Python发送和读取Lotus Notes邮件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/">至少你得知道字符集和编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            是否想过神秘的Content-Type标签？你知道的，就是你应该放在HTML里面的，但是你从来不是否清楚里面是什么？
-你是否收到你的朋...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                使用Python发送和读取Lotus Notes邮件
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Leo Luo</strong>
+        <span>10月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Python发送和读取Lotus Notes邮件&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Python发送和读取Lotus Notes邮件&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html&via=Leo Luo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=使用Python发送和读取Lotus Notes邮件&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="使用Python发送和读取Lotus-Notes邮件"><a href="#使用Python发送和读取Lotus-Notes邮件" class="headerlink" title="使用Python发送和读取Lotus Notes邮件"></a>使用Python发送和读取Lotus Notes邮件</h1><hr>
+<blockquote>
+<p>本人原创，转载请注明出处<br>Blog:<a href="http://leoluo.top" title="LeoLuo" target="_blank" rel="external">Why So Serious</a><br>Github: <a href="https://github.com/LeoLuo22/" target="_blank" rel="external">LeoLuo22</a><br>CSDN: <a href="http://blog.csdn.net/u013271714" target="_blank" rel="external">我的CSDN</a></p>
+</blockquote>
+<hr>
+<h2 id="0x00前言"><a href="#0x00前言" class="headerlink" title="0x00前言"></a>0x00前言</h2><p>公司限制内部访问互联网，与外网的唯一通道只有Lotus Notes，所以与外界的一切交互只能通过Notes邮件来进行。之前为了提醒，实现了自动发送邮件的功能。但是我也想通过外网邮件传递指令给机器，比如关机，打卡，重启等等。要实现这些就要能够读取Notes邮件的内容，当时Google了一遍，发现大部分都是基于VB和.NET的，我试着用把他们的代码用Python实现，但是会出现各种异常，由此放下。这两个月以来一直很忙，也没精力在注意这些。直到昨晚，由于在公司值班，又有时间来研究一下。<br>先说一下环境：</p>
+<blockquote>
+<p>OS: Windows 7 Enterprise 64Bit<br>Lotus Notes 8.5.3<br>Python 3.5.3</p>
+</blockquote>
+<hr>
+<h2 id="0x01准备"><a href="#0x01准备" class="headerlink" title="0x01准备"></a>0x01准备</h2><p>首先要清楚两个概念：</p>
+<ul>
+<li>邮件服务器</li>
+<li>数据库文件</li>
+</ul>
+<p>这两个东西很重要。Notes的邮件数据库是以.nsf文件的形式存储在服务器上的，所以要读取邮件内容，必须需要服务器名称和.nsf文件路径。这两个可以通过下列步骤找到。</p>
+<ol>
+<li>选择文件-&gt;首选项</li>
+<li>选择场所-&gt;联机(基于你的默认值)<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt="image"></li>
+<li>点击编辑</li>
+<li>选择 服务器 选项，得到你的服务器名称<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B73.PNG" alt="image"></li>
+<li>选择 邮件 选项，得到你的文件路径<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B74.PNG" alt="image"></li>
+</ol>
+<p>其次，Notes只提供了COM接口，所以首先需要生成库。</p>
+<pre><code>from win32com.client import makepy
+makepy.GenerateFromTypeLibSpec(&apos;Lotus Domino Objects&apos;)
+makepy.GenerateFromTypeLibSpec(&apos;Lotus Notes Automation Classes&apos;)
+</code></pre><hr>
+<h2 id="0x02-读取邮件"><a href="#0x02-读取邮件" class="headerlink" title="0x02 读取邮件"></a>0x02 读取邮件</h2><p>首先，我们创建一个NotesMail对象，然后在<strong>init</strong>方法初始化连接。</p>
+<pre><code>class NotesMail():
+&quot;&quot;&quot;
+ 发送读取邮件有关的操作
+&quot;&quot;&quot;
+def __init__(self, server, file):
+    &quot;&quot;&quot;初始化连接
+        @param server
+         服务器名
+        @param file
+         数据文件名
+    &quot;&quot;&quot;
+    session = DispatchEx(&apos;Notes.NotesSession&apos;)
+    server = session.GetEnvironmentString(&quot;MailServer&quot;, True)
+    self.db = session.GetDatabase(server, file)
+    self.db.OPENMAIL
+    self.myviews = []
+</code></pre><p>self.myviews保存数据库下所有的视图。</p>
+<p>我们可以获取所有的视图名称：</p>
+<pre><code>def get_views(self):
+for view in self.db.Views:
+    if view.IsFolder:
+        self.myviews.append(view.name)
+</code></pre><p>返回内容如下：</p>
+<blockquote>
+<p>[‘(群组日历)’, ‘(规则)’, ‘($Alarms)’, ‘($MAPIUseContacts)’, ‘($Inbox-Categorized1)’, ‘($JunkMail)’, ‘($Trash)’, ‘(OA Mail)’, ‘($Inbox)’, ‘Files’, ‘SVN’, ‘Work’, ‘Mine’]</p>
+</blockquote>
+<p>包含你的收件箱以及你创建的文件夹。</p>
+<p>我们可以定义一个方法来获取一个视图下的所有document。</p>
+<pre><code>def make_document_generator(self, view_name):
+self.__get_folder()
+folder = self.db.GetView(view_name)
+if not folder:
+    raise Exception(&apos;Folder {0} not found. &apos;.format(view_name))
+document = folder.GetFirstDocument
+while document:
+    yield document
+    document = folder.GetNextDocument(document)
+</code></pre><p>在这里踩了一个坑，一开始我写的是</p>
+<blockquote>
+<p>document = folder.GetFirstDocument()</p>
+</blockquote>
+<p>给我报错</p>
+<pre><code>&lt;class &apos;win32com.client.CDispatch&apos;&gt;
+Traceback (most recent call last):
+File &quot;notesmail.py&quot;, line 64, in &lt;module&gt;
+main()
+File &quot;notesmail.py&quot;, line 60, in main
+mail.read_mail()
+File &quot;notesmail.py&quot;, line 49, in read_mail
+    for document in self.make_document_generator(&apos;Mine&apos;):
+File &quot;notesmail.py&quot;, line 43, in    make_document_generator
+    document = folder.GetNextDocument()
+File &quot;&lt;COMObject &lt;unknown&gt;&gt;&quot;, line 2, in GetNextDocument
+pywintypes.com_error: (-2147352571, &apos;类型不匹配。&apos;, None, 0)
+</code></pre><p>又是这种错，当初改写.NET的代码的时候也出现这种错。出现这种错的原因可能是没有GetFirstDocument()方法。这几天佛跳墙用不了，用了bing国际版去搜索lotus notes api，结果没找到什么有用的信息。我又搜索getfirstdocument，转机来了，找到了lotus的官网，上面有各种API。在此推荐一下：连接<a href="http://s" target="_blank" rel="external">http://s</a></p>
+<p>原来是不需要括号的。</p>
+<p>然后写一个解析document的方法。</p>
+<pre><code>def extract_documet(self, document):
+
+&quot;&quot;&quot;提取Document
+&quot;&quot;&quot;
+result = {}
+result[&apos;subject&apos;] = document.GetItemValue(&apos;Subject&apos;)[0].strip()
+result[&apos;date&apos;] = document.GetItemValue(&apos;PostedDate&apos;)[0]
+result[&apos;From&apos;] = document.GetItemValue(&apos;From&apos;)[0].strip()
+result[&apos;To&apos;] = document.GetItemValue(&apos;SendTo&apos;)
+result[&apos;body&apos;] = document.GetItemValue(&apos;Body&apos;)[0].strip()
+</code></pre><p>And，Voila.</p>
+<pre><code>&apos;body&apos;: &apos;纠结\r\n发自我的iPhone&apos;, &apos;date&apos;: pywintypes.datetime(2017, 10, 26, 20, 17, 9, tzinfo=TimeZoneInfo(&apos;GMT Standard Time&apos;, True)), &apos;subject&apos;: &apos;&apos;,
+</code></pre><hr>
+<p>##0x03 发送邮件<br>发送邮件的操作比较简单，直接上代码吧。</p>
+<pre><code>def send_mail(self, receiver, subject, body=None):
+&quot;&quot;&quot;发送邮件
+    @param receiver: 收件人
+    @param subject: 主题
+    @param body: 内容
+&quot;&quot;&quot;
+doc = self.db.CREATEDOCUMENT
+doc.sendto = receiver
+doc.Subject = subject
+if body:
+    doc.Body = body
+doc.SEND(0, receiver)
+</code></pre><p>篇幅所限，完整代码放在我的<a href="https://github.com/LeoLuo22/notesmail" target="_blank" rel="external">Github</a>。<br>欢迎讨论和提issue。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" class="comment"></div>
+<script>
+    window.onload = function() {
+        new Valine({
+            av: AV, // source from av-min.js
+            el: '.comment',
+            app_id: "8qDKU78IBtlO6QcFsC9uiS1X-gzGzoHsz",
+            app_key: "yAEJnO6Vuq7Bel91k2VLvHoL",
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
     }
 </script>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+        <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

@@ -41,7 +41,7 @@
     
     <title>
         
-            归档 | 
+            如何在SolrCloud中添加删除节点 | 
         
         Why So Serious?
     </title>
@@ -235,15 +235,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http:/leoluo.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | Why So Serious?">
+    <meta property="og:title" content="如何在SolrCloud中添加删除节点 | Why So Serious?">
     <meta property="og:image" content="http:/leoluo.top/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Mon Oct 30 2017 19:42:11 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Oct 30 2017 19:42:11 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | Why So Serious?">
+    <meta name="twitter:title" content="如何在SolrCloud中添加删除节点 | Why So Serious?">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http:/leoluo.top/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -251,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http:/leoluo.top/archives/index.html" />
+        <link rel="canonical" href="http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html",
+    "headline": "如何在SolrCloud中添加删除节点",
+    "datePublished": "Mon Oct 30 2017 19:42:11 GMT+0800",
+    "dateModified": "Mon Oct 30 2017 19:42:11 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Leo Luo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Why So Serious?",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -300,206 +333,307 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何在SolrCloud中添加删除节点"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何在SolrCloud中添加删除节点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00-准备"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">0x00 准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01-方案1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">0x01 方案1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-方案2"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">0x02 方案2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x03-小结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">0x03 小结</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/如何在SolrCloud中添加删除节点/">如何在SolrCloud中添加删除节点</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/">使用Python发送和读取Lotus Notes邮件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/">至少你得知道字符集和编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            是否想过神秘的Content-Type标签？你知道的，就是你应该放在HTML里面的，但是你从来不是否清楚里面是什么？
-你是否收到你的朋...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                如何在SolrCloud中添加删除节点
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Leo Luo</strong>
+        <span>10月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=如何在SolrCloud中添加删除节点&url=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=如何在SolrCloud中添加删除节点&url=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html&via=Leo Luo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=如何在SolrCloud中添加删除节点&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/10/30/如何在SolrCloud中添加删除节点/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="如何在SolrCloud中添加删除节点"><a href="#如何在SolrCloud中添加删除节点" class="headerlink" title="如何在SolrCloud中添加删除节点"></a>如何在SolrCloud中添加删除节点</h1><hr>
+<blockquote>
+<p>本人原创，转载请注明出处<br>Blog:<a href="http://leoluo.top" title="LeoLuo" target="_blank" rel="external">Why So Serious</a><br>Github: <a href="https://github.com/LeoLuo22/" target="_blank" rel="external">LeoLuo22</a><br>CSDN: <a href="http://blog.csdn.net/u013271714" target="_blank" rel="external">我的CSDN</a></p>
+</blockquote>
+<hr>
+<h2 id="0x00-准备"><a href="#0x00-准备" class="headerlink" title="0x00 准备"></a>0x00 准备</h2><p><em>注: 默认你已经搭建好了zookeeper集群。并且已经把配置文件夹上传到了zookeeper。</em>   </p>
+<p>创建一个Solrhome文件夹。这个文件夹里保存的是solr.xml文件。   </p>
+<pre><code>mkdir &lt;solr.home for new solr node&gt;
+cp &lt;existing solr.xml path&gt; &lt;new solr.home&gt;
+</code></pre><p>solr.xml文件内容大概是这样：   </p>
+<p><img src="http://1" alt="图1">   </p>
+<h2 id="0x01-方案1"><a href="#0x01-方案1" class="headerlink" title="0x01 方案1"></a>0x01 方案1</h2><p>之前采用的方案是当节点增加时创建新的分区，删除节点删除对应的分区就可以了。   </p>
+<ul>
+<li>创建集合   </li>
+</ul>
+<p><code>http://22.11.97.12:8983/solr/admin/collections?action=CREATE&amp;name=product-collection&amp;router.name=implicit&amp;shards=shard1,shard2&amp;collection.configName=myconf</code>   </p>
+<p>其中，注意route.name要设为impicit的，这样的话以后才能动态添加删除分区。shards根据你的当前的Solr服务器数目决定，目前我有两台服务器，所以设为shard1和shard2。 还有要指定配置文件夹名称，配置文件夹我是放在Zookeeper的/configs/myconf。   </p>
+<p>此时的集群如下：   </p>
+<p><img src="http://11" alt="图2"></p>
+<ul>
+<li>创建分区   </li>
+</ul>
+<p>启动你要新增的节点。运行创建分区的命令。   </p>
+<pre><code>http://22.11.97.18:8987/solr/admin/collections?action=CREATESHARD&amp;shard=shard3&amp;collection=function-collection   
+</code></pre><p>此时的集群如下：</p>
+<p><img src="http://11" alt="图3">   </p>
+<ul>
+<li><p>删除分区   </p>
+<p>  <a href="http://22.11.97.18:8987/solr/admin/collections?action=DELETESHARD&amp;shard=shard3&amp;collection=function-collection" target="_blank" rel="external">http://22.11.97.18:8987/solr/admin/collections?action=DELETESHARD&amp;shard=shard3&amp;collection=function-collection</a>   </p>
+</li>
+</ul>
+<p>满足了动态添加删除节点的需求。但是有个问题，我发现这种方式添加的节点都是主节点。这样的话如果我把某台服务器停掉的话，会是什么效果？   </p>
+<p>试验了一下，直接报了500错误。   </p>
+<p>所以，这种方案不可取。   </p>
+<hr>
+<h2 id="0x02-方案2"><a href="#0x02-方案2" class="headerlink" title="0x02 方案2"></a>0x02 方案2</h2><p>这是目前采用的方案。<br>该方案是我在官方文档上找到了一个ADDREPLICA的API，顾名思义，就是添加副本(replica)的。   </p>
+<ul>
+<li><p>创建集合   </p>
+<p>  <a href="http://22.11.97.11:8983/solr/admin/collections?action=CREATE&amp;name=function-collection&amp;replicationFactor=3&amp;collection.configName=myconf&amp;numShards=1" target="_blank" rel="external">http://22.11.97.11:8983/solr/admin/collections?action=CREATE&amp;name=function-collection&amp;replicationFactor=3&amp;collection.configName=myconf&amp;numShards=1</a>   </p>
+</li>
+</ul>
+<p><img src="http://11" alt="图4"></p>
+<p>replicationFactor是副本的个数，以你当前的服务器数为准。numShards是分区数，目前设置为1个分区。   </p>
+<ul>
+<li><p>添加节点   </p>
+<p>  <a href="http://22.11.97.18:8983/solr/admin/collections?action=ADDREPLICA&amp;collection=function-collection&amp;shard=shard1" target="_blank" rel="external">http://22.11.97.18:8983/solr/admin/collections?action=ADDREPLICA&amp;collection=function-collection&amp;shard=shard1</a>   </p>
+</li>
+<li><p>删除节点   </p>
+</li>
+</ul>
+<p>默认，从上往下是core_node1,code_node2,core_node3   </p>
+<pre><code>http://22.11.97.11:8983/solr/admin/collections?action=DELETEREPLICA&amp;collection=function-collection&amp;shard=shard1&amp;replica=core_node1   
+</code></pre><p><img src="http://1" alt="图5"></p>
+<h2 id="0x03-小结"><a href="#0x03-小结" class="headerlink" title="0x03 小结"></a>0x03 小结</h2><p>目前我所知道的动态添加删除节点的方式就两种。一种是通过将集合切割分区的方式，但是这种方式有两个弊端。其一是目前的集合的文档数还不多，不到2w，切割太多的分区没有意义，一个就好。其二是不知道为什么这种方式导致新增的节点都是主节点，所以一台节点挂掉之后整个集群就挂了。   </p>
+<p>而第二种方式，也就是是添加分区的副本(replica)的方式，这种方式的话Solr会自动选举主节点，避免了单个节点挂掉整个集群就奔溃。而且日后如果索引太多的话，可以通过切割分区的方式来划分。   </p>
+<p>后续如果索引太多可以使用   </p>
+<pre><code>http://22.11.97.18:8983/solr/admin/collections?action=SPLITSHARD&amp;name=function-collection&amp;shard=shard1   
+</code></pre><p>来切割分区。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" class="comment"></div>
+<script>
+    window.onload = function() {
+        new Valine({
+            av: AV, // source from av-min.js
+            el: '.comment',
+            app_id: "8qDKU78IBtlO6QcFsC9uiS1X-gzGzoHsz",
+            app_key: "yAEJnO6Vuq7Bel91k2VLvHoL",
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
     }
 </script>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
