@@ -41,7 +41,7 @@
     
     <title>
         
-            归档 | 
+            Spring学习笔记之Spring MVC | 
         
         Why So Serious?
     </title>
@@ -235,15 +235,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http:/leoluo.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | Why So Serious?">
+    <meta property="og:title" content="Spring学习笔记之Spring MVC | Why So Serious?">
     <meta property="og:image" content="http:/leoluo.top/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Tue Nov 21 2017 19:25:22 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 21 2017 19:25:22 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | Why So Serious?">
+    <meta name="twitter:title" content="Spring学习笔记之Spring MVC | Why So Serious?">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http:/leoluo.top/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -251,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http:/leoluo.top/archives/index.html" />
+        <link rel="canonical" href="http:/leoluo.top/2017/11/21/Spring/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http:/leoluo.top/2017/11/21/Spring/index.html",
+    "headline": "Spring学习笔记之Spring MVC",
+    "datePublished": "Tue Nov 21 2017 19:25:22 GMT+0800",
+    "dateModified": "Tue Nov 21 2017 19:25:22 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Leo Luo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Why So Serious?",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -300,262 +333,341 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Spring学习笔记之Spring-MVC"><span class="post-toc-number">1.</span> <span class="post-toc-text">Spring学习笔记之Spring MVC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00-前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">0x00 前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">0x01</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-DispatcherServlet"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">0x02 DispatcherServlet</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x03-Required-Configuration"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">0x03 Required Configuration</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/21/Spring/">Spring学习笔记之Spring MVC</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/21/Spring/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>11月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/如何在SolrCloud中添加删除节点/">如何在SolrCloud中添加删除节点</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/">使用Python发送和读取Lotus Notes邮件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/">至少你得知道字符集和编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            是否想过神秘的Content-Type标签？你知道的，就是你应该放在HTML里面的，但是你从来不是否清楚里面是什么？
-你是否收到你的朋...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                Spring学习笔记之Spring MVC
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Leo Luo</strong>
+        <span>11月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/11/21/Spring/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spring学习笔记之Spring MVC&url=http:/leoluo.top/2017/11/21/Spring/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spring学习笔记之Spring MVC&url=http:/leoluo.top/2017/11/21/Spring/index.html&via=Leo Luo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/11/21/Spring/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/11/21/Spring/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=Spring学习笔记之Spring MVC&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/11/21/Spring/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Spring学习笔记之Spring-MVC"><a href="#Spring学习笔记之Spring-MVC" class="headerlink" title="Spring学习笔记之Spring MVC"></a>Spring学习笔记之Spring MVC</h1><hr>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>我为什么要学习Spring?   </p>
+<p>之前一直用的是django，但是公司用的是Spring。来公司之后在公司搭好的架子上面写代码，也不用关心各种配置和配置文件。但是，周末有一个技能比赛，要求用Spring框架，于是我从头开始一步一步开始做，复制粘贴各种配置文件。结果，卡在了登陆上，打死获取不到我放在session里面的值。   </p>
+<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><p>Spring MVC全称为Spring Web MVC framework，它提供了Model-View-Controller(MVC)架构。MVC可以分散应用的不同部分（输入逻辑，业务逻辑，UI逻辑)，并且使得他们的耦合性很低。   </p>
+<ul>
+<li><strong>Model</strong>: 封装应用数据，通常由<strong>POJO</strong>组成。   </li>
+<li><strong>View</strong>: 负责渲染model的数据，通常产生浏览器可以解析的HTML文件。</li>
+<li><strong>Controller</strong>: 负责处理用户请求，构造合适的model然后传递给view渲染。   </li>
+</ul>
+<h2 id="0x02-DispatcherServlet"><a href="#0x02-DispatcherServlet" class="headerlink" title="0x02 DispatcherServlet"></a>0x02 DispatcherServlet</h2><p>Spring MVC框架围绕着一个<em>DispacherServlet</em>设计，DispacherServlet是用来处理所有的HTTP请求和响应的。如下图所示：   </p>
+<p><img src="http://oy2p9zlfs.bkt.clouddn.com/spring_dispatcherservlet.png" alt="图1">   </p>
+<p>下面的是发送给DispacherServlet的HTTP的处理流程：   </p>
+<ul>
+<li>接收到HTTP请求之后，DispacherServlet询问<em>HandlerMapping</em>来调用合适的<em>Controller</em></li>
+<li><em>Controller</em>接收request然后调用合适的service方法。service方法会基于定义的业务逻辑设置model数据，把view名称返回给<em>DispacherServlet</em></li>
+<li><em>DispacherServlet</em>询问<em>ViweResolver</em>来选择为请求定义的view</li>
+<li>当viwe好了之后，<em>DispacherServlet</em>将model数据床底给view,view渲染给浏览器</li>
+</ul>
+<p>上述所有的组件，比如HandlerMapping，Controller以及ViewResolver都是<em>WebApplicationContext</em>的一部分。   </p>
+<h2 id="0x03-Required-Configuration"><a href="#0x03-Required-Configuration" class="headerlink" title="0x03 Required Configuration"></a>0x03 Required Configuration</h2><p>你需要将你想要让<em>DispatcherServlet</em>处理的请求进行映射，通过在 <strong>web.xml</strong> 里面的URL映射。下面的例子是用来对 <strong>HelloWeb</strong> <em>DispatcherServlet</em> 进行声明和映射。</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;display-name&gt;Spring MVC&lt;/display-name&gt;
+
+&lt;web-app id=&quot;WebApp_ID&quot; version=&quot;2.4&quot;
+     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+     xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; 
+     xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee 
+     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot; &gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;HelloWeb&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+     &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+     &lt;servlet-name&gt;HelloWeb&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</code></pre><p><strong>web.xml</strong> 在你应用的WebContent/WEB-INF文件夹下。当初始化 <strong>HelloWeb</strong> DispatcherServlet时，框架会尝试从一个位于WebContent/WEB-INF文件下的 <strong>[servlet-name]servlet.xml</strong> 的文件载入应用的上下文（context）。本次我们的文件叫做 <strong>HelloWebServlet.xml</strong> 。   </p>
+<p>接下来,<servlet-mapping>标签表明URLs会被哪个DispatcherServlet处理。在这里所有的HTTP请求以 <strong>.jsp</strong> 结尾的都会被 <strong>HelloWeb</strong> DispatcherServlet处理。   </servlet-mapping></p>
+<p>如果你不想要默认的 <strong>[servlet-name]servlet.xml</strong> 文件名以及路径，你可以通过在你的web.xml添加servlet listener <em>ContextLoaderListener</em>  来自定义文件名和路径。   </p>
+<pre><code>&lt;web-app...&gt;
+
+&lt;!------------------- DispatcherServlet definition goes here ----------------&gt;
+....
+&lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;
+        /WEB-INF/HelloWeb-servlet.xml,
+    &lt;/param-value&gt;
+&lt;/context-param&gt;
+
+&lt;listener&gt;
+    &lt;listener-class&gt;
+        org.springframework.web.context.ContextLoaderListener
+    &lt;/listener-class&gt;
+&lt;/listener&gt;
+</code></pre><p>现在，来看一下 <strong>HelloWeb-servlet.xml</strong> 必需的配置。   </p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+xmlns:util=&quot;http://www.springframework.org/schema/util&quot; 
+xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/util 
+   http://www.springframework.org/schema/util/spring-util-3.0.xsd 
+   http://www.springframework.org/schema/mvc 
+   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+  &quot;&gt;
+
+&lt;!-- 扫包 --&gt;
+&lt;context:component-scan base-package=&quot;com.springmvc.*&quot;&gt;&lt;/context:component-scan&gt;
+
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;!-- 制定页面存放的路径 --&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/pages/&quot;&gt;&lt;/property&gt;
+        &lt;!-- 文件的后缀 --&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+&lt;/beans&gt;   
+</code></pre><ul>
+<li><em>[servlet-name]-servlet.xml</em> 被用来创建定义的beans</li>
+<li><em><contextcomponent-scan...></contextcomponent-scan...></em> 标签被用来激活Spring MVC的注解扫描，比如@Controller和@RequestMapping等。   </li>
+<li><em>InternalResourceViewResolver</em> 有定义的规则来解析view的名称。在上述定义的规则中，一个名为 <strong>hello</strong> 的逻辑视图会被代表为在 <em>WEB-INF/jsp/hello.jsp</em> 的实现。   </li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" class="comment"></div>
+<script>
+    window.onload = function() {
+        new Valine({
+            av: AV, // source from av-min.js
+            el: '.comment',
+            app_id: "8qDKU78IBtlO6QcFsC9uiS1X-gzGzoHsz",
+            app_key: "yAEJnO6Vuq7Bel91k2VLvHoL",
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
     }
 </script>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
