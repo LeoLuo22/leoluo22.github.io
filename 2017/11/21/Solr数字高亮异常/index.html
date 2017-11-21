@@ -41,7 +41,7 @@
     
     <title>
         
-            归档: 2017 | 
+            Solr高亮及搜索逻辑思考 | 
         
         Why So Serious?
     </title>
@@ -235,15 +235,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http:/leoluo.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | Why So Serious?">
+    <meta property="og:title" content="Solr高亮及搜索逻辑思考 | Why So Serious?">
     <meta property="og:image" content="http:/leoluo.top/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
+        <meta property="article:published_time" content="Tue Nov 21 2017 19:59:13 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 21 2017 19:59:13 GMT+0800" />
+    
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | Why So Serious?">
+    <meta name="twitter:title" content="Solr高亮及搜索逻辑思考 | Why So Serious?">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http:/leoluo.top/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -251,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http:/leoluo.top/archives/2017/index.html" />
+        <link rel="canonical" href="http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html",
+    "headline": "Solr高亮及搜索逻辑思考",
+    "datePublished": "Tue Nov 21 2017 19:59:13 GMT+0800",
+    "dateModified": "Tue Nov 21 2017 19:59:13 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Leo Luo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Why So Serious?",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -300,318 +333,409 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Solr高亮及搜索逻辑"><span class="post-toc-number">1.</span> <span class="post-toc-text">Solr高亮及搜索逻辑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00-前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">0x00 前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Solution"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Solution</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/21/Solr数字高亮异常/">Solr高亮及搜索逻辑思考</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/21/Solr数字高亮异常/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>11月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/21/Spring/">Spring学习笔记之Spring MVC</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/21/Spring/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>11月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/如何在SolrCloud中添加删除节点/">如何在SolrCloud中添加删除节点</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/">使用Python发送和读取Lotus Notes邮件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/使用Python发送和读取Lotus Notes邮件/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/">至少你得知道字符集和编码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            是否想过神秘的Content-Type标签？你知道的，就是你应该放在HTML里面的，但是你从来不是否清楚里面是什么？
-你是否收到你的朋...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Leo Luo's avatar">
-            </div>
-            <div>
-                <strong>Leo Luo</strong>
-                <span>10月 30, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-        locatePost = locatePost.next();
+        
+    
+            <p class="article-headline-p">
+                Solr高亮及搜索逻辑思考
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Leo Luo</strong>
+        <span>11月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/11/21/Solr数字高亮异常/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Solr高亮及搜索逻辑思考&url=http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Solr高亮及搜索逻辑思考&url=http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html&via=Leo Luo" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=Solr高亮及搜索逻辑思考&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/11/21/Solr数字高亮异常/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Solr高亮及搜索逻辑"><a href="#Solr高亮及搜索逻辑" class="headerlink" title="Solr高亮及搜索逻辑"></a>Solr高亮及搜索逻辑</h1><hr>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>马上就要发版本了，这次版本要新上对产品和功能的搜索。    </p>
+<p>但是，却有一个问题，高亮问题。   </p>
+<p>比如：  </p>
+<p>搜索 111   </p>
+<p>返回:中银易贷【<strong>1243215321534</strong>】【 12345674687】   </p>
+<p>可以看到，整个数字串都被高亮了。同样，搜索 证，搜索结果中的<strong>证券</strong>期货，证券会被高亮。明显不是我们想要的效果。      </p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Solr对域(field)和域类型(fieldType)以及分词策略都定义在managed-schema里面。   </p>
+<p>先看一下之前其他人定义的manage-schema的关键部分。    </p>
+<pre><code>&lt;fieldType name=&quot;textComplex&quot; class=&quot;solr.TextField&quot; positionIncrementGap=&quot;100&quot;&gt;
+  &lt;analyzer&gt;        
+    &lt;tokenizer class=&quot;com.chenlb.mmseg4j.solr.MMSegTokenizerFactory&quot; mode=&quot;complex&quot; dicPath=&quot;/bmsvr/solrdata/dic&quot; /&gt;
+    &lt;filter class=&quot;solr.SynonymFilterFactory&quot; synonyms=&quot;synonyms.txt&quot; ignoreCase=&quot;true&quot; expand=&quot;true&quot;/&gt;
+    &lt;filter class=&quot;solr.LowerCaseFilterFactory&quot; /&gt;
+    &lt;filter class=&quot;solr.EdgeNGramFilterFactory&quot; minGramSize=&quot;1&quot; maxGramSize=&quot;50&quot;  /&gt;
+  &lt;/analyzer&gt;      
+&lt;/fieldType&gt;
+
+&lt;field name=&quot;id&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot; required=&quot;true&quot; multiValued=&quot;false&quot;/&gt;
+&lt;field name=&quot;indexTypeCode&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot;/&gt;
+&lt;field name=&quot;indexTypeName&quot; type=&quot;textComplex&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+&lt;field name=&quot;proCode&quot; type=&quot;textComplex&quot; indexed=&quot;true&quot; stored=&quot;true&quot; multiValued=&quot;false&quot;/&gt;
+&lt;field name=&quot;proName&quot; type=&quot;textComplex&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+&lt;field name=&quot;proUrl&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;funCode&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot;/&gt;
+&lt;field name=&quot;funName&quot; type=&quot;textComplex&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+&lt;field name=&quot;funUrl&quot; type=&quot;string&quot; indexed=&quot;false&quot; stored=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;dataType&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;product&quot; type=&quot;string&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;suggest&quot; type=&quot;textComplex&quot;  indexed=&quot;true&quot;  stored=&quot;false&quot; multiValued=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;text&quot; type=&quot;textComplex&quot; stored=&quot;false&quot; indexed=&quot;true&quot; multiValued=&quot;true&quot;/&gt;
+
+&lt;field name=&quot;_version_&quot; type=&quot;long&quot; indexed=&quot;true&quot; stored=&quot;true&quot;/&gt;
+
+&lt;uniqueKey&gt;id&lt;/uniqueKey&gt;
+
+&lt;defaultSearchField&gt;text&lt;/defaultSearchField&gt;
+
+&lt;copyField source =&quot;proCode&quot; dest=&quot;text&quot;/&gt;                              
+&lt;copyField source =&quot;proName&quot; dest=&quot;text&quot;/&gt;
+&lt;copyField source =&quot;funName&quot; dest=&quot;text&quot;/&gt;
+&lt;copyField source =&quot;indexTypeName&quot; dest=&quot;text&quot;/&gt;
+
+&lt;copyField source =&quot;proCode&quot; dest=&quot;suggest&quot;/&gt;                              
+&lt;copyField source =&quot;proName&quot; dest=&quot;suggest&quot;/&gt;
+&lt;copyField source =&quot;funName&quot; dest=&quot;suggest&quot;/&gt;
+&lt;copyField source =&quot;indexTypeName&quot; dest=&quot;suggest&quot;/&gt;
+</code></pre><p>默认的搜索域是text，text的类型是textComplex，textComplex的分词策略如下：      </p>
+<pre><code>&lt;fieldType name=&quot;textComplex&quot; class=&quot;solr.TextField&quot; positionIncrementGap=&quot;100&quot;&gt;
+&lt;analyzer&gt;        
+&lt;tokenizer class=&quot;com.chenlb.mmseg4j.solr.MMSegTokenizerFactory&quot; mode=&quot;complex&quot; dicPath=&quot;/bmsvr/solrdata/dic&quot; /&gt;
+&lt;filter class=&quot;solr.SynonymFilterFactory&quot; synonyms=&quot;synonyms.txt&quot; ignoreCase=&quot;true&quot; expand=&quot;true&quot;/&gt;
+&lt;filter class=&quot;solr.LowerCaseFilterFactory&quot; /&gt;
+&lt;filter class=&quot;solr.EdgeNGramFilterFactory&quot; minGramSize=&quot;1&quot; maxGramSize=&quot;50&quot;  /&gt;
+&lt;/analyzer&gt;     
+&lt;/fieldType&gt;   
+</code></pre><p>怀疑是否是分词策略的原因。   </p>
+<p>可以看到，分词策略首先是匹配停用词(stopword)，然后匹配同义词，然后转换为小写，最后使用edgengram分词。   </p>
+<p>凭证的分词结果是凭，凭证。<br>111的分词结果是 1, 11, 111,type是word   </p>
+<p><img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE1.PNG" alt="图1">   </p>
+<p>solrconfig.xml有关高亮的配置如下：   </p>
+<pre><code>  &lt;!--高亮--&gt;
+  &lt;str name=&quot;hl&quot;&gt;on&lt;/str&gt;
+  &lt;str name=&quot;hl.fl&quot;&gt;proCode proName funName&lt;/str&gt;
+  &lt;str name=&quot;hl.encoder&quot;&gt;html&lt;/str&gt;
+  &lt;str name=&quot;hl.simple.pre&quot;&gt;&lt;b&gt;&lt;/str&gt;
+  &lt;str name=&quot;hl.simple.post&quot;&gt;&lt;/b&gt;&lt;/str&gt;
+  &lt;str name=&quot;f.proCode.hl.fragsize&quot;&gt;0&lt;/str&gt;
+  &lt;str name=&quot;f.proCode.hl.alternateField&quot;&gt;proCode&lt;/str&gt;
+  &lt;str name=&quot;f.proName.hl.fragsize&quot;&gt;0&lt;/str&gt;
+  &lt;str name=&quot;f.proName.hl.alternateField&quot;&gt;proName&lt;/str&gt;
+  &lt;str name=&quot;f.funName.hl.fragsize&quot;&gt;0&lt;/str&gt;
+  &lt;str name=&quot;f.funName.hl.alternateField&quot;&gt;funName&lt;/str&gt;
+&lt;/lst&gt;   
+</code></pre><p>查阅了Solr的官方文档，只说明了高亮的配置，并没有介绍高亮的逻辑。   </p>
+<p>之前还有一个问题，产品索引库了存在proName为凭证的索引内容，但是搜索 证券，凭证就是搜不出来。   </p>
+<p>我查看了一下他俩的分词结果：   </p>
+<p>凭证的分词是凭，凭证   </p>
+<p>证券期货的分词是证，证券。   </p>
+<p>那么，会不会是搜索结果与搜索内容和搜索结果的分词结果相关？    </p>
+<p>为了测试，我修改了分词</p>
+<p>默认的proCode和proName两个域都是text类型。但是后来我把proCode的分词策略改了。以搜索 111q 为例。   </p>
+<p>高亮返回：   </p>
+<pre><code>&quot;20171110220007683664-874947726&quot;: {
+  &quot;proCode&quot;: [
+    &quot;xian-&lt;em&gt;111&lt;/em&gt;5&quot;
+  ],
+  &quot;proName&quot;: [
+    &quot;xian-&lt;em&gt;1115&lt;/em&gt;&quot;
+  ]
+},   
+</code></pre><p>可以看到proCode只有111加了高亮，而proName整个1115都加了高亮。   </p>
+<p>xian-1115的proCode的分词结果为：   </p>
+<p>x<br>xi<br>i<br>3<br>ia<br>a<br>an<br>n<br>-1<br>1<br>11<br>1<br>11<br>1<br>15<br>5   </p>
+<p>而text的分词结果为：   </p>
+<p>x<br>xi<br>xia<br>xian<br>1<br>11<br>111<br>1115    </p>
+<p>see?proCode高亮了111, proName高亮了1115。貌似是根据结果域分词最长的句子来匹配的。    </p>
+<p>为了验证，我在数据库添加了一条数据，proCode和proName都是100011ab   </p>
+<p>搜索100011</p>
+<pre><code>&quot;201711061433224775011720779125&quot;: {
+  &quot;proCode&quot;: [
+    &quot;&lt;em&gt;100011&lt;/em&gt;ab&quot;
+  ],
+  &quot;proName&quot;: [
+    &quot;&lt;em&gt;100011ab&lt;/em&gt;&quot;
+  ]
+},   
+</code></pre><p>proCode分词结果：   </p>
+<p>1<br>10<br>0<br>00<br>0<br>00<br>0<br>01<br>1<br>11<br>1<br>1a<br>a<br>ab<br>b   </p>
+<p>proName的分词结果是：   </p>
+<p>1<br>10<br>100<br>1000<br>10001<br>100011<br>100011a<br>100011ab    </p>
+<p>高亮的应该是结果域的分词结果能和搜索内容匹配的最多的。   </p>
+<p>而且，还与搜索内容的分词结果相关。   </p>
+<p>比如，搜索100011ab，默认是text分词。   </p>
+<p>现象：proCode只高亮了100011   </p>
+<p>搜索proCode:100011ab   </p>
+<p>proCode高亮了100011ab   </p>
+<p>贪心匹配。   </p>
+<p>所以我对高亮策略的猜想：搜索内容的分词结果与结果的分词结果贪心匹配。   </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一个想法是 既然是对结果分词的贪心匹配   </p>
+<p>那 如果把结果域分得足够细呢？</p>
+<pre><code>&lt;fieldType name=&quot;proCodeIndex&quot; class=&quot;solr.TextField&quot;&gt;
+  &lt;analyzer&gt;
+    &lt;tokenizer class=&quot;solr.NGramTokenizerFactory&quot; minGramSize=&quot;1&quot; maxGramSize=&quot;1&quot; /&gt;
+    &lt;filter class=&quot;solr.LowerCaseFilterFactory&quot; /&gt;
+    &lt;filter class=&quot;solr.ClassicFilterFactory&quot; /&gt;
+  &lt;/analyzer&gt;      
+&lt;/fieldType&gt;   
+</code></pre><p>我把结果域使用了上述划分，划分效果如图2.   </p>
+<p>   <img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE2.PNG" alt="image"></p>
+<p>可以看到，直接是拆成了单字的形式。同样的，我对搜索域的分词策略也进行了修改。   </p>
+<pre><code>fieldType name=&quot;textComplex&quot; class=&quot;solr.TextField&quot; positionIncrementGap=&quot;100&quot;&gt;
+  &lt;analyzer&gt;        
+    &lt;tokenizer class=&quot;com.chenlb.mmseg4j.solr.MMSegTokenizerFactory&quot; mode=&quot;complex&quot; dicPath=&quot;/bmsvr/solrdata/dic&quot; /&gt;
+    &lt;filter class=&quot;solr.SynonymFilterFactory&quot; synonyms=&quot;synonyms.txt&quot; ignoreCase=&quot;true&quot; expand=&quot;true&quot;/&gt;
+    &lt;filter class=&quot;solr.LowerCaseFilterFactory&quot; /&gt;
+    &lt;!-- &lt;filter class=&quot;solr.EdgeNGramFilterFactory&quot; minGramSize=&quot;1&quot; maxGramSize=&quot;50&quot;  /&gt; --&gt;
+    &lt;filter class=&quot;solr.NGramFilterFactory&quot; minGramSize=&quot;1&quot; maxGramSize=&quot;5&quot;/&gt;
+    &lt;filter class=&quot;solr.RemoveDuplicatesTokenFilterFactory&quot; /&gt;
+  &lt;/analyzer&gt;      
+&lt;/fieldType&gt;   
+</code></pre><p>分词效果如图3   </p>
+<p>   <img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE3.PNG" alt="image"></p>
+<p>最后，将结果域的copyField设置为了text   </p>
+<pre><code>&lt;copyField source =&quot;proCode&quot; dest=&quot;text&quot;/&gt;
+&lt;copyField source =&quot;proName&quot; dest=&quot;text&quot;/&gt;
+&lt;copyField source =&quot;funName&quot; dest=&quot;text&quot;/&gt;
+&lt;copyField source =&quot;indexTypeName&quot; dest=&quot;text&quot;/&gt;
+
+&lt;copyField source =&quot;proCode&quot; dest=&quot;suggest&quot;/&gt;                              
+&lt;copyField source =&quot;proName&quot; dest=&quot;suggest&quot;/&gt;
+&lt;copyField source =&quot;funName&quot; dest=&quot;suggest&quot;/&gt;
+&lt;copyField source =&quot;indexTypeName&quot; dest=&quot;suggest&quot;/&gt;
+</code></pre><p>现在的高亮效果如下。   </p>
+<p>   <img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE4.PNG" alt="image"><br>   <img src="http://oy2p9zlfs.bkt.clouddn.com/%E5%9B%BE5.PNG" alt="image"><br>可以看到，只会对与搜索内容匹配的高亮，而不是高亮一大块。但目前还有的小问题就是不会高亮全角的字符。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" class="comment"></div>
+<script>
+    window.onload = function() {
+        new Valine({
+            av: AV, // source from av-min.js
+            el: '.comment',
+            app_id: "8qDKU78IBtlO6QcFsC9uiS1X-gzGzoHsz",
+            app_key: "yAEJnO6Vuq7Bel91k2VLvHoL",
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
     }
 </script>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/21/Spring/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
