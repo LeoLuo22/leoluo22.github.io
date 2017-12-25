@@ -41,7 +41,7 @@
     
     <title>
         
-            使用Python发送和读取Lotus Notes邮件 | 
+            Tensorflow学习笔记2-深入MNIST | 
         
         Why So Serious?
     </title>
@@ -235,18 +235,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http:/leoluo.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="使用Python发送和读取Lotus Notes邮件 | Why So Serious?">
+    <meta property="og:title" content="Tensorflow学习笔记2-深入MNIST | Why So Serious?">
     <meta property="og:image" content="http:/leoluo.top/img/favicon.png" />
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Mon Oct 30 2017 19:41:42 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Oct 30 2017 19:41:20 GMT+0800" />
+        <meta property="article:published_time" content="Mon Dec 25 2017 20:47:02 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Dec 25 2017 20:47:02 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="使用Python发送和读取Lotus Notes邮件 | Why So Serious?">
+    <meta name="twitter:title" content="Tensorflow学习笔记2-深入MNIST | Why So Serious?">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="http:/leoluo.top/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -254,7 +254,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" />
+        <link rel="canonical" href="http:/leoluo.top/2017/12/25/TF学习笔记2/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -266,10 +266,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html",
-    "headline": "使用Python发送和读取Lotus Notes邮件",
-    "datePublished": "Mon Oct 30 2017 19:41:42 GMT+0800",
-    "dateModified": "Mon Oct 30 2017 19:41:20 GMT+0800",
+    "mainEntityOfPage": "http:/leoluo.top/2017/12/25/TF学习笔记2/index.html",
+    "headline": "Tensorflow学习笔记2-深入MNIST",
+    "datePublished": "Mon Dec 25 2017 20:47:02 GMT+0800",
+    "dateModified": "Mon Dec 25 2017 20:47:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Leo Luo",
@@ -362,7 +362,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用Python发送和读取Lotus-Notes邮件"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用Python发送和读取Lotus Notes邮件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">0x00前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01准备"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">0x01准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-读取邮件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">0x02 读取邮件</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权重初始化"><span class="post-toc-number">1.</span> <span class="post-toc-text">权重初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卷积和池化"><span class="post-toc-number">2.</span> <span class="post-toc-text">卷积和池化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一层卷积"><span class="post-toc-number">3.</span> <span class="post-toc-text">第一层卷积</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二层卷积"><span class="post-toc-number">4.</span> <span class="post-toc-text">第二层卷积</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#密集连接层"><span class="post-toc-number">5.</span> <span class="post-toc-text">密集连接层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dropout"><span class="post-toc-number">6.</span> <span class="post-toc-text">Dropout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输出层"><span class="post-toc-number">7.</span> <span class="post-toc-text">输出层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#训练和评估模型"><span class="post-toc-number">8.</span> <span class="post-toc-text">训练和评估模型</span></a></li></ol>
     </ul>
     
 
@@ -394,7 +394,7 @@
         
     
             <p class="article-headline-p">
-                使用Python发送和读取Lotus Notes邮件
+                Tensorflow学习笔记2-深入MNIST
             </p>
         </div>
 
@@ -413,7 +413,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Leo Luo</strong>
-        <span>10月 30, 2017</span>
+        <span>12月 25, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -435,7 +435,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http:/leoluo.top/2017/12/25/TF学习笔记2/">
     
 </ul>
 
@@ -467,7 +467,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Python发送和读取Lotus Notes邮件&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Tensorflow学习笔记2-深入MNIST&url=http:/leoluo.top/2017/12/25/TF学习笔记2/index.html&pic=http:/leoluo.top/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -476,7 +476,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Python发送和读取Lotus Notes邮件&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html&via=Leo Luo" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Tensorflow学习笔记2-深入MNIST&url=http:/leoluo.top/2017/12/25/TF学习笔记2/index.html&via=Leo Luo" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -485,7 +485,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http:/leoluo.top/2017/12/25/TF学习笔记2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -494,7 +494,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http:/leoluo.top/2017/12/25/TF学习笔记2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -506,7 +506,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=使用Python发送和读取Lotus Notes邮件&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/10/30/使用Python发送和读取Lotus Notes邮件/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Why So Serious?&title=Tensorflow学习笔记2-深入MNIST&summary=&pics=http:/leoluo.top/img/favicon.png&url=http:/leoluo.top/2017/12/25/TF学习笔记2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -524,119 +524,33 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="使用Python发送和读取Lotus-Notes邮件"><a href="#使用Python发送和读取Lotus-Notes邮件" class="headerlink" title="使用Python发送和读取Lotus Notes邮件"></a>使用Python发送和读取Lotus Notes邮件</h1><hr>
-<blockquote>
-<p>本人原创，转载请注明出处<br>Blog:<a href="http://leoluo.top" title="LeoLuo" target="_blank" rel="external">Why So Serious</a><br>Github: <a href="https://github.com/LeoLuo22/" target="_blank" rel="external">LeoLuo22</a><br>CSDN: <a href="http://blog.csdn.net/u013271714" target="_blank" rel="external">我的CSDN</a></p>
+        <blockquote>
+<p>TF的后端是C++，Python与后端的连接称为session。一般，首先创建一个图，然后再session中启动它。</p>
 </blockquote>
-<hr>
-<h2 id="0x00前言"><a href="#0x00前言" class="headerlink" title="0x00前言"></a>0x00前言</h2><p>公司限制内部访问互联网，与外网的唯一通道只有Lotus Notes，所以与外界的一切交互只能通过Notes邮件来进行。之前为了提醒，实现了自动发送邮件的功能。但是我也想通过外网邮件传递指令给机器，比如关机，打卡，重启等等。要实现这些就要能够读取Notes邮件的内容，当时Google了一遍，发现大部分都是基于VB和.NET的，我试着用把他们的代码用Python实现，但是会出现各种异常，由此放下。这两个月以来一直很忙，也没精力在注意这些。直到昨晚，由于在公司值班，又有时间来研究一下。<br>先说一下环境：</p>
-<blockquote>
-<p>OS: Windows 7 Enterprise 64Bit<br>Lotus Notes 8.5.3<br>Python 3.5.3</p>
-</blockquote>
-<hr>
-<h2 id="0x01准备"><a href="#0x01准备" class="headerlink" title="0x01准备"></a>0x01准备</h2><p>首先要清楚两个概念：</p>
-<ul>
-<li>邮件服务器</li>
-<li>数据库文件</li>
-</ul>
-<p>这两个东西很重要。Notes的邮件数据库是以.nsf文件的形式存储在服务器上的，所以要读取邮件内容，必须需要服务器名称和.nsf文件路径。这两个可以通过下列步骤找到。</p>
-<ol>
-<li>选择文件-&gt;首选项</li>
-<li>选择场所-&gt;联机(基于你的默认值)<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt="image"></li>
-<li>点击编辑</li>
-<li>选择 服务器 选项，得到你的服务器名称<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B73.PNG" alt="image"></li>
-<li>选择 邮件 选项，得到你的文件路径<br><img src="http://oy2p9zlfs.bkt.clouddn.com/%E6%8D%95%E8%8E%B74.PNG" alt="image"></li>
-</ol>
-<p>其次，Notes只提供了COM接口，所以首先需要生成库。</p>
-<pre><code>from win32com.client import makepy
-makepy.GenerateFromTypeLibSpec(&apos;Lotus Domino Objects&apos;)
-makepy.GenerateFromTypeLibSpec(&apos;Lotus Notes Automation Classes&apos;)
-</code></pre><hr>
-<h2 id="0x02-读取邮件"><a href="#0x02-读取邮件" class="headerlink" title="0x02 读取邮件"></a>0x02 读取邮件</h2><p>首先，我们创建一个NotesMail对象，然后在<strong>init</strong>方法初始化连接。</p>
-<pre><code>class NotesMail():
-&quot;&quot;&quot;
- 发送读取邮件有关的操作
-&quot;&quot;&quot;
-def __init__(self, server, file):
-    &quot;&quot;&quot;初始化连接
-        @param server
-         服务器名
-        @param file
-         数据文件名
-    &quot;&quot;&quot;
-    session = DispatchEx(&apos;Notes.NotesSession&apos;)
-    server = session.GetEnvironmentString(&quot;MailServer&quot;, True)
-    self.db = session.GetDatabase(server, file)
-    self.db.OPENMAIL
-    self.myviews = []
-</code></pre><p>self.myviews保存数据库下所有的视图。</p>
-<p>我们可以获取所有的视图名称：</p>
-<pre><code>def get_views(self):
-for view in self.db.Views:
-    if view.IsFolder:
-        self.myviews.append(view.name)
-</code></pre><p>返回内容如下：</p>
-<blockquote>
-<p>[‘(群组日历)’, ‘(规则)’, ‘($Alarms)’, ‘($MAPIUseContacts)’, ‘($Inbox-Categorized1)’, ‘($JunkMail)’, ‘($Trash)’, ‘(OA Mail)’, ‘($Inbox)’, ‘Files’, ‘SVN’, ‘Work’, ‘Mine’]</p>
-</blockquote>
-<p>包含你的收件箱以及你创建的文件夹。</p>
-<p>我们可以定义一个方法来获取一个视图下的所有document。</p>
-<pre><code>def make_document_generator(self, view_name):
-self.__get_folder()
-folder = self.db.GetView(view_name)
-if not folder:
-    raise Exception(&apos;Folder {0} not found. &apos;.format(view_name))
-document = folder.GetFirstDocument
-while document:
-    yield document
-    document = folder.GetNextDocument(document)
-</code></pre><p>在这里踩了一个坑，一开始我写的是</p>
-<blockquote>
-<p>document = folder.GetFirstDocument()</p>
-</blockquote>
-<p>给我报错</p>
-<pre><code>&lt;class &apos;win32com.client.CDispatch&apos;&gt;
-Traceback (most recent call last):
-File &quot;notesmail.py&quot;, line 64, in &lt;module&gt;
-main()
-File &quot;notesmail.py&quot;, line 60, in main
-mail.read_mail()
-File &quot;notesmail.py&quot;, line 49, in read_mail
-    for document in self.make_document_generator(&apos;Mine&apos;):
-File &quot;notesmail.py&quot;, line 43, in    make_document_generator
-    document = folder.GetNextDocument()
-File &quot;&lt;COMObject &lt;unknown&gt;&gt;&quot;, line 2, in GetNextDocument
-pywintypes.com_error: (-2147352571, &apos;类型不匹配。&apos;, None, 0)
-</code></pre><p>又是这种错，当初改写.NET的代码的时候也出现这种错。出现这种错的原因可能是没有GetFirstDocument()方法。这几天佛跳墙用不了，用了bing国际版去搜索lotus notes api，结果没找到什么有用的信息。我又搜索getfirstdocument，转机来了，找到了lotus的官网，上面有各种API。在此推荐一下：连接<a href="http://s" target="_blank" rel="external">http://s</a></p>
-<p>原来是不需要括号的。</p>
-<p>然后写一个解析document的方法。</p>
-<pre><code>def extract_documet(self, document):
-
-&quot;&quot;&quot;提取Document
-&quot;&quot;&quot;
-result = {}
-result[&apos;subject&apos;] = document.GetItemValue(&apos;Subject&apos;)[0].strip()
-result[&apos;date&apos;] = document.GetItemValue(&apos;PostedDate&apos;)[0]
-result[&apos;From&apos;] = document.GetItemValue(&apos;From&apos;)[0].strip()
-result[&apos;To&apos;] = document.GetItemValue(&apos;SendTo&apos;)
-result[&apos;body&apos;] = document.GetItemValue(&apos;Body&apos;)[0].strip()
-</code></pre><p>And，Voila.</p>
-<pre><code>&apos;body&apos;: &apos;纠结\r\n发自我的iPhone&apos;, &apos;date&apos;: pywintypes.datetime(2017, 10, 26, 20, 17, 9, tzinfo=TimeZoneInfo(&apos;GMT Standard Time&apos;, True)), &apos;subject&apos;: &apos;&apos;,
-</code></pre><hr>
-<p>##0x03 发送邮件<br>发送邮件的操作比较简单，直接上代码吧。</p>
-<pre><code>def send_mail(self, receiver, subject, body=None):
-&quot;&quot;&quot;发送邮件
-    @param receiver: 收件人
-    @param subject: 主题
-    @param body: 内容
-&quot;&quot;&quot;
-doc = self.db.CREATEDOCUMENT
-doc.sendto = receiver
-doc.Subject = subject
-if body:
-    doc.Body = body
-doc.SEND(0, receiver)
-</code></pre><p>篇幅所限，完整代码放在我的<a href="https://github.com/LeoLuo22/notesmail" target="_blank" rel="external">Github</a>。<br>欢迎讨论和提issue。</p>
+<p>上次的模型准确率是91%左右。现在，采用<strong>多层卷积网络来提高准确率</strong>。</p>
+<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><p>为了提高模型的准确性，需要创建大量的权重(W)和偏置量(b)。这个模型中的权重在初始化时需要加入少量的<strong>噪声</strong>来打破<em>对称性</em>和避免<em>0梯度</em>。本次实验使用的是<strong>ReLU</strong>神经元，因此比较好的做法是用一个较小的正数来初始化偏置项，以避免神经元节点输出恒为0的问题(dead neurons)。为了不在建立模型的时候反复进行初始化，定义两个函数用于初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 初始化操作</div><div class="line">def weight_variable(shape):</div><div class="line">    initial = tf.truncated_normal(shape, stddev=0.1)</div><div class="line">    return tf.Variable(initial)</div><div class="line"></div><div class="line">def bias_variable(shape):</div><div class="line">    initial = tf.constant(0.1, shape=shape)</div><div class="line">    return tf.Variable(initial)</div></pre></td></tr></table></figure>
+<h2 id="卷积和池化"><a href="#卷积和池化" class="headerlink" title="卷积和池化"></a>卷积和池化</h2><p>本次实验使用<strong>vanilla</strong>版本，卷积使用1步长(stride size)，0边距(padding size)的模板，保证输出和输入是同一个大小。池化使用简单传统的2x2大学的模板max pooling。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def conv2d(x, W):</div><div class="line">    return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding=&apos;SAME&apos;)</div><div class="line"></div><div class="line">def max_pool_2x2(x):</div><div class="line">    return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],</div><div class="line">                          strides=[1, 2, 2, 1], padding=&apos;SAME&apos;)</div></pre></td></tr></table></figure>
+<h2 id="第一层卷积"><a href="#第一层卷积" class="headerlink" title="第一层卷积"></a>第一层卷积</h2><p>组成：1卷积+1max pooling。</p>
+<p>卷积在每个5x5的patch中算出32的特征。卷积的权重张量形状是[5, 5, 1, 32],前两个维度是patch的大小，接着是输入的通道数目，最后是输出的通道数目。对于每一个输出通道都有对应的偏置量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">w_conv1 = weight_variable([5, 5, 1, 32])</div><div class="line">b_conv1 = bias_variable([32])</div></pre></td></tr></table></figure>
+<p>为了用这一次，我们把x变成一个4D向量，其2，3维度对应图片的宽，高，最后一维代表图片的颜色通道数（灰度图，通道数为1，rgv为3）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x_image = tf.reshape(x, [-1, 28, 28, 1])</div></pre></td></tr></table></figure>
+<p>把x_image和权值向量进行卷积，加上偏置项，然后使用ReLU函数激活，最后进行max pooling。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)</div><div class="line">h_pool1 = max_pool_2x2(h_conv1)</div></pre></td></tr></table></figure>
+<h2 id="第二层卷积"><a href="#第二层卷积" class="headerlink" title="第二层卷积"></a>第二层卷积</h2><p>把类似的层堆叠起来，第二层中，每个5x5的patch会得到64个特征。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">W_conv2 = weight_variable([5, 5, 32, 64])</div><div class="line">b_conv2 = bias_variable([64])</div><div class="line"></div><div class="line">h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)</div><div class="line">h_pool2 = max_pool_2x2(h_conv2)</div></pre></td></tr></table></figure>
+<h2 id="密集连接层"><a href="#密集连接层" class="headerlink" title="密集连接层"></a>密集连接层</h2><p>现在，图片尺寸缩小到了7x7，我们加入一个有1024个神经元的全连接层，用于处理整个图片。把池化层输出的张量reshape成一些向量，乘以权重矩阵，加上偏置，然后对其使用ReLU.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">W_fc1 = weight_variable([7 * 7 * 64, 1024])</div><div class="line">b_fc1 = bias_variable([1024])</div><div class="line"></div><div class="line">h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])</div><div class="line">h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)</div></pre></td></tr></table></figure>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h2><p>为了减少过拟合，需要在输出层加入dropout。用一个placeholder来代表一个神经元的输出在dropout中保持不变的概率。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">keep_prob = tf.placeholder(&quot;float&quot;)</div><div class="line">h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)</div></pre></td></tr></table></figure>
+<h2 id="输出层"><a href="#输出层" class="headerlink" title="输出层"></a>输出层</h2><p>最后，添加一个SoftMax层来进行softmax回归。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">W_fc2 = weight_variable([1024, 10])</div><div class="line">b_fc2 = bias_variable([10])</div><div class="line"></div><div class="line">y_conv = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)</div></pre></td></tr></table></figure>
+<h2 id="训练和评估模型"><a href="#训练和评估模型" class="headerlink" title="训练和评估模型"></a>训练和评估模型</h2><p>使用更复杂的ADAM优化器来做梯度最速下降。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">cross_entropy = -tf.reduce_sum(y_*tf.log(y_conv))</div><div class="line">train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)</div><div class="line">correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1))</div><div class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, &quot;float&quot;))</div><div class="line">sess.run(tf.initialize_all_variables())</div><div class="line">for i in range(20000):</div><div class="line">    batch = mnist.train.next_batch(50)</div><div class="line">    if i%100 == 0:</div><div class="line">        train_accuracy = accuracy.eval(feed_dict=&#123;</div><div class="line">        x:batch[0], y_: batch[1], keep_prob: 1.0&#125;)</div><div class="line">        print(&quot;step %d, training accuracy %g&quot;%(i, train_accuracy))</div><div class="line">    train_step.run(feed_dict=&#123;x: batch[0], y_: batch[1], keep_prob: 0.5&#125;)</div><div class="line"></div><div class="line">print(&quot;test accuracy %g&quot;%accuracy.eval(feed_dict=&#123;</div><div class="line">    x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0&#125;))</div></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">Extracting MNIST_data\train-images-idx3-ubyte.gz</div><div class="line">Extracting MNIST_data\train-labels-idx1-ubyte.gz</div><div class="line">Extracting MNIST_data\t10k-images-idx3-ubyte.gz</div><div class="line">Extracting MNIST_data\t10k-labels-idx1-ubyte.gz</div><div class="line">2017-12-25 20:43:07.185964: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2</div><div class="line">2017-12-25 20:43:07.446422: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1030] Found device 0 with properties:</div><div class="line">name: GeForce GTX 960 major: 5 minor: 2 memoryClockRate(GHz): 1.2025</div><div class="line">pciBusID: 0000:01:00.0</div><div class="line">totalMemory: 4.00GiB freeMemory: 3.33GiB</div><div class="line">2017-12-25 20:43:07.446715: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -&gt; (device: 0, name: GeForce GTX 960, pci bus id: 0000:01:00.0, compute capability: 5.2)</div><div class="line">WARNING:tensorflow:From C:\Users\Leo\AppData\Local\Programs\Python\Python35\lib\site-packages\tensorflow\python\util\tf_should_use.py:107: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.</div><div class="line">Instructions for updating:</div><div class="line">Use `tf.global_variables_initializer` instead.</div><div class="line">step 0, training accuracy 0.12</div><div class="line">step 100, training accuracy 0.88</div><div class="line">step 200, training accuracy 0.9</div><div class="line">step 300, training accuracy 0.8</div><div class="line">step 400, training accuracy 0.92</div><div class="line">step 500, training accuracy 0.94</div><div class="line">step 600, training accuracy 1</div><div class="line">step 700, training accuracy 0.94</div><div class="line">step 800, training accuracy 0.9</div><div class="line">step 900, training accuracy 1</div><div class="line">step 1000, training accuracy 0.96</div><div class="line">step 1100, training accuracy 1</div><div class="line">step 1200, training accuracy 0.98</div><div class="line">step 1300, training accuracy 0.98</div><div class="line">step 1400, training accuracy 1</div><div class="line">step 1500, training accuracy 0.98</div><div class="line">step 1600, training accuracy 1</div><div class="line">step 1700, training accuracy 1</div><div class="line">step 1800, training accuracy 1</div><div class="line">step 1900, training accuracy 1</div><div class="line">step 2000, training accuracy 0.96</div><div class="line">step 2100, training accuracy 0.96</div><div class="line">step 2200, training accuracy 1</div><div class="line">step 2300, training accuracy 1</div><div class="line">step 2400, training accuracy 1</div><div class="line">step 2500, training accuracy 1</div><div class="line">step 2600, training accuracy 1</div><div class="line">step 2700, training accuracy 0.96</div><div class="line">step 2800, training accuracy 0.96</div><div class="line">step 2900, training accuracy 1</div><div class="line">step 3000, training accuracy 1</div><div class="line">step 3100, training accuracy 0.98</div><div class="line">step 3200, training accuracy 1</div><div class="line">step 3300, training accuracy 0.98</div><div class="line">step 3400, training accuracy 0.96</div><div class="line">step 3500, training accuracy 1</div><div class="line">step 3600, training accuracy 1</div><div class="line">step 3700, training accuracy 1</div><div class="line">step 3800, training accuracy 0.98</div><div class="line">step 3900, training accuracy 1</div><div class="line">step 4000, training accuracy 1</div><div class="line">step 4100, training accuracy 0.98</div><div class="line">step 4200, training accuracy 1</div><div class="line">step 4300, training accuracy 0.94</div><div class="line">step 4400, training accuracy 1</div><div class="line">step 4500, training accuracy 1</div><div class="line">step 4600, training accuracy 1</div><div class="line">step 4700, training accuracy 1</div><div class="line">step 4800, training accuracy 0.98</div><div class="line">step 4900, training accuracy 0.98</div><div class="line">step 5000, training accuracy 0.98</div><div class="line">step 5100, training accuracy 0.94</div><div class="line">step 5200, training accuracy 1</div><div class="line">step 5300, training accuracy 1</div><div class="line">step 5400, training accuracy 1</div><div class="line">step 5500, training accuracy 1</div><div class="line">step 5600, training accuracy 0.98</div></pre></td></tr></table></figure>
 
         
     
@@ -670,21 +584,13 @@ doc.SEND(0, receiver)
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/30/如何在SolrCloud中添加删除节点/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/30/The Absolute Ｍinimum Every Software Developer/" id="post_nav-older" class="next-content">
+        <a href="/2017/12/25/Tensorflow学习笔记1/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
